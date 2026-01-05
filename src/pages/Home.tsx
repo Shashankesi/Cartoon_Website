@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Hero } from '@/components/Hero';
-import { CharacterCard } from '@/components/CharacterCard';
-import { MovieCard } from '@/components/MovieCard';
-import { characters } from '@/data/characters';
-import { movies } from '@/data/movies';
+import { CharacterCardWithImages } from '@/components/CharacterCardWithImages';
+import { MovieCardWithImages } from '@/components/MovieCardWithImages';
+import { charactersWithImages } from '@/data/charactersWithImages';
+import { moviesWithImages } from '@/data/moviesWithImages';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
@@ -31,8 +31,8 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {characters.slice(0, 3).map((character, index) => (
-              <CharacterCard key={character.id} character={character} index={index} />
+            {charactersWithImages.slice(0, 3).map((character, index) => (
+              <CharacterCardWithImages key={character.id} character={character} index={index} />
             ))}
           </div>
 
@@ -68,8 +68,8 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {movies.slice(0, 3).map((movie, index) => (
-              <MovieCard key={movie.id} movie={movie} index={index} />
+            {moviesWithImages.slice(0, 3).map((movie, index) => (
+              <MovieCardWithImages key={movie.id} movie={movie} index={index} />
             ))}
           </div>
 
