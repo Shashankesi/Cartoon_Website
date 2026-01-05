@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Hero } from '@/components/Hero';
 import { CharacterCardWithImages } from '@/components/CharacterCardWithImages';
 import { MovieCardWithImages } from '@/components/MovieCardWithImages';
-import { charactersWithImages } from '@/data/charactersWithImages';
-import { moviesWithImages } from '@/data/moviesWithImages';
+import charactersWithImages from '@/data/charactersWithImages';
+import moviesWithImages from '@/data/moviesWithImages';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 

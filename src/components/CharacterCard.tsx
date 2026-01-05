@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { Character } from '@/data/characters';
 import { useFavoritesStore } from '@/store/useFavoritesStore';
+import { characterImages } from '@/data/characterImages';
 
 interface CharacterCardProps {
   character: Character;
@@ -12,6 +13,11 @@ interface CharacterCardProps {
 export const CharacterCard = ({ character, index }: CharacterCardProps) => {
   const { toggleFavoriteCharacter, isFavoriteCharacter } = useFavoritesStore();
   const isFavorite = isFavoriteCharacter(character.id);
+
+  const getImageUrl = (imagePath: string | undefined) => {
+    if (!imagePath) return '';
+    return characterImages[imagePath] || '';
+  };
 
   const getColorClass = (color: string) => {
     switch (color) {
@@ -69,6 +75,8 @@ export const CharacterCard = ({ character, index }: CharacterCardProps) => {
               toggleFavoriteCharacter(character.id);
             }}
             className="absolute top-4 right-4 z-10 p-2 rounded-full glass opacity-0 group-hover:opacity-100 transition-opacity"
+            title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+            aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           >
             <Heart
               size={20}
@@ -76,10 +84,22 @@ export const CharacterCard = ({ character, index }: CharacterCardProps) => {
             />
           </button>
 
-          {/* Character Icon */}
+          {/* Character Image */}
           <div className="p-6 pb-2">
-            <div className="w-24 h-24 mx-auto rounded-full bg-background/50 flex items-center justify-center text-5xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-              {getEmojiForCharacter(character.id)}
+            <div className="w-24 h-24 mx-auto rounded-full bg-background/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+              {character.image ? (
+                <img
+                  src={getImageUrl(character.image)}
+                  alt={character.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to emoji if image fails
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              ) : (
+                <span className="text-5xl">{getEmojiForCharacter(character.id)}</span>
+              )}
             </div>
           </div>
 

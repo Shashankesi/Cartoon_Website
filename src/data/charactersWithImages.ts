@@ -38,10 +38,10 @@ export const charactersWithImages: CharacterWithImages[] = [
     description: "An ordinary boy whose life changes when Doraemon arrives from the future. Clumsy but kind-hearted with incredible potential.",
     
     images: {
-      profileImage: "/src/images/nobita.webp",
-      emotionalScene: "/src/images/nobita.webp",
-      groupScene: "/src/images/nobita.webp",
-      chibiStyle: "/src/images/nobita.webp"
+      profileImage: "/character_image/nobita.jpg",
+      emotionalScene: "/character_image/nobita.jpg",
+      groupScene: "/character_image/nobita.jpg",
+      chibiStyle: "/character_image/nobita.jpg"
     },
     
     personality: ["Clumsy", "Kind-hearted", "Brave", "Determined", "Compassionate"],
@@ -60,10 +60,10 @@ export const charactersWithImages: CharacterWithImages[] = [
     description: "A blue robotic cat from the 22nd century sent to help Nobita. Carries incredible gadgets in his four-dimensional pocket.",
     
     images: {
-      profileImage: "/src/images/doaremon.webp",
-      emotionalScene: "/src/images/doaremon.webp",
-      groupScene: "/src/images/doaremon.webp",
-      chibiStyle: "/src/images/doaremon.webp"
+      profileImage: "/character_image/doraemon.png",
+      emotionalScene: "/character_image/doraemon.png",
+      groupScene: "/character_image/doraemon.png",
+      chibiStyle: "/character_image/doraemon.png"
     },
     
     personality: ["Loyal", "Helpful", "Intelligent", "Playful", "Protective"],
@@ -82,10 +82,10 @@ export const charactersWithImages: CharacterWithImages[] = [
     description: "Nobita's crush and the kind, intelligent girl who becomes his most important companion. Patient and compassionate towards everyone.",
     
     images: {
-      profileImage: "/src/images/sizuka.jpg",
-      emotionalScene: "/src/images/sizuka.jpg",
-      groupScene: "/src/images/sizuka.jpg",
-      chibiStyle: "/src/images/sizuka.jpg"
+      profileImage: "/character_image/shizuka.jpg",
+      emotionalScene: "/character_image/shizuka.jpg",
+      groupScene: "/character_image/shizuka.jpg",
+      chibiStyle: "/character_image/shizuka.jpg"
     },
     
     personality: ["Intelligent", "Kind", "Patient", "Gentle", "Strong-willed"],
@@ -104,10 +104,10 @@ export const charactersWithImages: CharacterWithImages[] = [
     description: "The neighborhood bully with a rough exterior but a hidden kind heart. Despite his tough behavior, he becomes a loyal friend.",
     
     images: {
-      profileImage: "/src/images/gian.jpg",
-      emotionalScene: "/src/images/gian.jpg",
-      groupScene: "/src/images/gian.jpg",
-      chibiStyle: "/src/images/gian.jpg"
+      profileImage: "/character_image/gian.jpg",
+      emotionalScene: "/character_image/gian.jpg",
+      groupScene: "/character_image/gian.jpg",
+      chibiStyle: "/character_image/gian.jpg"
     },
     
     personality: ["Tough", "Loyal", "Protective", "Honest", "Sensitive"],
@@ -126,10 +126,10 @@ export const charactersWithImages: CharacterWithImages[] = [
     description: "A wealthy boy who often boasts about his possessions and status. Despite his arrogance, he proves to be a true friend when it matters.",
     
     images: {
-      profileImage: "/src/images/suneo.jpg",
-      emotionalScene: "/src/images/suneo.jpg",
-      groupScene: "/src/images/suneo.jpg",
-      chibiStyle: "/src/images/suneo.jpg"
+      profileImage: "/character_image/suneo.jpg",
+      emotionalScene: "/character_image/suneo.jpg",
+      groupScene: "/character_image/suneo.jpg",
+      chibiStyle: "/character_image/suneo.jpg"
     },
     
     personality: ["Boastful", "Clever", "Competitive", "Insecure", "Loyal"],
@@ -148,10 +148,10 @@ export const charactersWithImages: CharacterWithImages[] = [
     description: "Doraemon's younger sister who often checks on him. More serious and responsible than her brother, with her own set of gadgets.",
     
     images: {
-      profileImage: "/src/images/dorami.jpg",
-      emotionalScene: "/src/images/dorami.jpg",
-      groupScene: "/src/images/dorami.jpg",
-      chibiStyle: "/src/images/dorami.jpg"
+      profileImage: "/character_image/dorami.jpg",
+      emotionalScene: "/character_image/dorami.jpg",
+      groupScene: "/character_image/dorami.jpg",
+      chibiStyle: "/character_image/dorami.jpg"
     },
     
     personality: ["Responsible", "Smart", "Caring", "Firm", "Innovative"],

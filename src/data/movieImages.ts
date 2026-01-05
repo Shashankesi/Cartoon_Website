@@ -1,0 +1,26 @@
+// Movie images served from public folder
+export const movieImages: Record<string, string> = {
+  "Nobita's Dinosaur (1980).jpg": "/movie_image/Nobita's Dinosaur (1980).jpg",
+  "Nobita and the Haunts of Evil (1982).jpg": "/movie_image/Nobita and the Haunts of Evil (1982).jpg",
+  "Nobita and the Castle of the Undersea Devil (1983).jpg": "/movie_image/Nobita and the Castle of the Undersea Devil (1983).jpg",
+  "Nobita's Great Adventure into the Underworld (1984).webp": "/movie_image/Nobita's Great Adventure into the Underworld (1984).webp",
+  "Nobita's Little Star Wars (1985).jpg": "/movie_image/Nobita's Little Star Wars (1985).jpg",
+  "Nobita and the Steel Troops (1986).webp": "/movie_image/Nobita and the Steel Troops (1986).webp",
+  "Nobita and the Knights on Dinosaurs (1987).webp": "/movie_image/Nobita and the Knights on Dinosaurs (1987).webp",
+  "Nobita's Parallel \"Journey to the West\" (1988).webp": "/movie_image/Nobita's Parallel \"Journey to the West\" (1988).webp",
+  "Nobita and the Birth of Japan (1989).webp": "/movie_image/Nobita and the Birth of Japan (1989).webp",
+  "Nobita and the Animal Planet (1990).webp": "/movie_image/Nobita and the Animal Planet (1990).webp",
+  "Nobita's Dorabian Nights (1991).jpg": "/movie_image/Nobita's Dorabian Nights (1991).jpg",
+  "Nobita and the Kingdom of Clouds (1992).webp": "/movie_image/Nobita and the Kingdom of Clouds (1992).webp",
+  "Nobita and the Three Magical Swordsmen (1994).jpg": "/movie_image/Nobita and the Three Magical Swordsmen (1994).jpg",
+  "Nobita and the Galactic Express (1996).jpg": "/movie_image/Nobita and the Galactic Express (1996).jpg",
+  "Nobita and the Spiral City (1997).webp": "/movie_image/Nobita and the Spiral City (1997).webp",
+  "Nobita in the Wan-Nyan Space-Time Odyssey (2004).jpg": "/movie_image/Nobita in the Wan-Nyan Space-Time Odyssey (2004).jpg",
+  "Nobita's Dinosaur 2006 (2006).webp": "/movie_image/Nobita's Dinosaur 2006 (2006).webp",
+  "Nobita and the New Steel Troops (2011).jpg": "/movie_image/Nobita and the New Steel Troops (2011).jpg",
+  "Nobita's Chronicle of the Moon Exploration (2019).webp": "/movie_image/Nobita's Chronicle of the Moon Exploration (2019).webp",
+  "Nobita's New Dinosaur (2020).webp": "/movie_image/Nobita's New Dinosaur (2020).webp",
+  "Stand by Me Doraemon (2014).webp": "/movie_image/Stand by Me Doraemon (2014).webp",
+  "Stand by Me Doraemon 2 (2020).jpg": "/movie_image/Stand by Me Doraemon 2 (2020).jpg",
+};
+

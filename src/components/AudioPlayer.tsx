@@ -17,9 +17,13 @@ export const AudioPlayer = () => {
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.play().catch(() => {
-          setIsPlaying(false);
-        });
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
+            console.error('Audio playback failed:', error);
+            setIsPlaying(false);
+          });
+        }
       } else {
         audioRef.current.pause();
       }
@@ -32,12 +36,14 @@ export const AudioPlayer = () => {
 
   return (
     <>
-      {/* Audio Element - Using a royalty-free placeholder */}
+      {/* Audio Element - Doraemon Theme Music */}
       <audio
         ref={audioRef}
         loop
-        preload="none"
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        preload="auto"
+        crossOrigin="anonymous"
+        src="/doremon.mp3"
+        onError={() => console.error('Failed to load audio')}
       />
 
       {/* Floating Audio Control */}

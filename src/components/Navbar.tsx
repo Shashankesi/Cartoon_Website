@@ -40,18 +40,18 @@ export const Navbar = () => {
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
+            {/* Logo / Title (single-letter icon) */}
             <Link to="/" className="flex items-center gap-3 group">
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center shadow-lg border border-primary/10"
               >
-                <span className="text-xl md:text-2xl">🤖</span>
+                <span className="text-xl md:text-2xl font-bold text-primary">D</span>
               </motion.div>
               <div className="hidden sm:block">
                 <h1 className="text-lg md:text-xl font-bold gradient-text">
-                  Doraemon Universe
+                  Doraemon Chronicle
                 </h1>
                 <p className="text-[10px] md:text-xs text-muted-foreground">
                   A Journey Through Time

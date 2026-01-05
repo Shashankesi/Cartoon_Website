@@ -15,10 +15,10 @@ interface AudioState {
 export const useAudioStore = create<AudioState>()(
   persist(
     (set) => ({
-      isPlaying: false,
+      isPlaying: true,
       volume: 0.3,
       isMuted: false,
-      currentTrack: null,
+      currentTrack: 'theme',
       setIsPlaying: (playing) => set({ isPlaying: playing }),
       setVolume: (volume) => set({ volume }),
       toggleMute: () => set((state) => ({ isMuted: !state.isMuted })),

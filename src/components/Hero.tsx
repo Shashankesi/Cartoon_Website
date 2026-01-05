@@ -89,9 +89,9 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
         >
-          <span className="gradient-text">Doraemon</span>
+          <span className="gradient-text-animated">Doraemon</span>
           <br />
-          <span className="text-foreground">Universe</span>
+          <span className="text-foreground neon-glow">Universe</span>
         </motion.h1>
 
         <motion.p
@@ -114,7 +114,7 @@ export const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg hover:shadow-xl transition-shadow glow-blue"
+              className="px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg hover:shadow-xl transition-shadow glow-blue button-pulse hard-shadow"
             >
               Begin the Journey
             </motion.button>
@@ -123,7 +123,7 @@ export const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-2xl glass glow-border font-semibold text-lg hover:bg-muted/50 transition-colors"
+              className="px-8 py-4 rounded-2xl glass-premium glow-border font-semibold text-lg hover:bg-muted/50 transition-all hover-glow"
             >
               Meet the Characters
             </motion.button>

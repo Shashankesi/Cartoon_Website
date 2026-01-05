@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Heart, Calendar, Sparkles } from 'lucide-react';
+import { Heart, Calendar, Play, Copy, Check } from 'lucide-react';
 import { Movie } from '@/data/movies';
 import { useFavoritesStore } from '@/store/useFavoritesStore';
+import { movieImages } from '@/data/movieImages';
+import { useState } from 'react';
 
 interface MovieCardProps {
   movie: Movie;
@@ -12,6 +13,19 @@ interface MovieCardProps {
 export const MovieCard = ({ movie, index }: MovieCardProps) => {
   const { toggleFavoriteMovie, isFavoriteMovie } = useFavoritesStore();
   const isFavorite = isFavoriteMovie(movie.id);
+  const [copied, setCopied] = useState(false);
+
+  const getImageUrl = (imagePath: string) => {
+    if (!imagePath) return '';
+    // Look up the image in the dynamically imported images
+    return movieImages[imagePath] || '';
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const getEmotionColor = (emotion: string) => {
     switch (emotion) {
@@ -52,14 +66,25 @@ export const MovieCard = ({ movie, index }: MovieCardProps) => {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <Link to={`/movies/${movie.id}`}>
-        <motion.div
-          whileHover={{ y: -8 }}
-          className="relative group h-full rounded-3xl overflow-hidden glass border border-border/50 card-hover"
-        >
+      <motion.div
+        whileHover={{ y: -8 }}
+        className="relative group h-full rounded-3xl overflow-hidden glass border border-border/50 card-hover"
+      >
           {/* Movie Poster Area */}
-          <div className="relative h-48 bg-gradient-to-br from-primary/20 via-background to-accent/10 flex items-center justify-center">
-            <span className="text-7xl">{getThemeIcon(movie.theme)}</span>
+          <div className="relative h-48 bg-gradient-to-br from-primary/20 via-background to-accent/10 flex items-center justify-center overflow-hidden">
+            {movie.posterImage ? (
+              <img
+                src={getImageUrl(movie.posterImage)}
+                alt={movie.title}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback to theme icon if image fails to load
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+            ) : (
+              <span className="text-7xl">{getThemeIcon(movie.theme)}</span>
+            )}
             
             {/* Year Badge */}
             <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full glass text-sm font-medium">
@@ -75,6 +100,8 @@ export const MovieCard = ({ movie, index }: MovieCardProps) => {
                 toggleFavoriteMovie(movie.id);
               }}
               className="absolute top-4 right-4 p-2 rounded-full glass opacity-0 group-hover:opacity-100 transition-opacity"
+              title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               <Heart
                 size={20}
@@ -89,14 +116,29 @@ export const MovieCard = ({ movie, index }: MovieCardProps) => {
           {/* Content */}
           <div className="p-6">
             <div className="flex items-start justify-between gap-2 mb-3">
-              <div>
-                <h3 className="text-lg font-bold group-hover:text-primary transition-colors line-clamp-2">
+              <div className="flex-1">
+                <h3 className="text-lg font-bold group-hover:text-primary transition-colors line-clamp-2 select-text cursor-text">
                   {movie.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground select-text cursor-text">
                   {movie.japaneseTitle}
                 </p>
               </div>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  copyToClipboard(`${movie.title}\n${movie.japaneseTitle || ''}\n${movie.synopsis}`);
+                }}
+                className="p-2 rounded-lg hover:bg-primary/20 transition-colors flex-shrink-0"
+                title="Copy text"
+              >
+                {copied ? (
+                  <Check size={18} className="text-green-500" />
+                ) : (
+                  <Copy size={18} className="text-muted-foreground hover:text-primary" />
+                )}
+              </button>
             </div>
 
             {/* Tags */}
@@ -109,14 +151,31 @@ export const MovieCard = ({ movie, index }: MovieCardProps) => {
               </span>
             </div>
 
-            <p className="text-sm text-foreground/70 line-clamp-3 mb-4">
+            <p className="text-sm text-foreground/70 line-clamp-3 mb-4 select-text cursor-text">
               {movie.synopsis}
             </p>
 
-            {/* Read More */}
-            <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
-              <Sparkles size={16} />
-              <span>Read Full Story</span>
+            {/* Watch Now Button */}
+            <div className="flex flex-col gap-3">
+              {movie.watchLink ? (
+                <a
+                  href={movie.watchLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  <Play size={16} />
+                  <span>Watch Now</span>
+                </a>
+              ) : (
+                <button
+                  disabled
+                  className="flex items-center justify-center gap-2 bg-muted text-muted-foreground px-4 py-2 rounded-lg text-sm font-medium opacity-50 cursor-not-allowed"
+                >
+                  <Play size={16} />
+                  <span>Watch Now</span>
+                </button>
+              )}
             </div>
           </div>
 
@@ -125,7 +184,6 @@ export const MovieCard = ({ movie, index }: MovieCardProps) => {
             <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
           </div>
         </motion.div>
-      </Link>
     </motion.div>
   );
 };

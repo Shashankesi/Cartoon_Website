@@ -12,6 +12,7 @@ export interface Character {
   growthArc: string;
   quote: string;
   color: string;
+  image?: string;
 }
 
 export const characters: Character[] = [
@@ -38,7 +39,8 @@ export const characters: Character[] = [
     ],
     growthArc: "From a defective factory robot who lost his ears to mice, Doraemon found his purpose in protecting Nobita. His journey teaches us that our flaws don't define us - our love and dedication do.",
     quote: "You can do it, Nobita! I believe in you!",
-    color: "primary"
+    color: "primary",
+    image: "doraemon.png"
   },
   {
     id: "nobita",
@@ -63,7 +65,8 @@ export const characters: Character[] = [
     ],
     growthArc: "Nobita's journey is about discovering that true strength isn't about grades or physical power - it's about having the courage to do what's right and the heart to care for others.",
     quote: "I may not be smart or strong, but I'll never give up on my friends!",
-    color: "secondary"
+    color: "secondary",
+    image: "nobita.jpg"
   },
   {
     id: "shizuka",
@@ -87,7 +90,8 @@ export const characters: Character[] = [
     ],
     growthArc: "Shizuka teaches us that true love sees beyond surface appearances. Her choice of Nobita shows that kindness and a pure heart matter more than success or popularity.",
     quote: "I believe in you, Nobita-san. You're braver than you know.",
-    color: "accent"
+    color: "accent",
+    image: "shizuka.jpg"
   },
   {
     id: "gian",
@@ -111,7 +115,8 @@ export const characters: Character[] = [
     ],
     growthArc: "Gian's journey shows that beneath every tough exterior can be a heart of gold. He learns that true strength means protecting others, not hurting them.",
     quote: "When my friends are in danger, I become the strongest!",
-    color: "destructive"
+    color: "destructive",
+    image: "gian.jpg"
   },
   {
     id: "suneo",
@@ -135,7 +140,8 @@ export const characters: Character[] = [
     ],
     growthArc: "Suneo learns that true friendship can't be bought. His journey is about finding value in genuine connections over material possessions.",
     quote: "Well... maybe Nobita isn't so bad after all.",
-    color: "muted"
+    color: "muted",
+    image: "suneo.jpg"
   },
   {
     id: "dorami",
@@ -158,6 +164,7 @@ export const characters: Character[] = [
     ],
     growthArc: "Dorami represents reliability and competence, but she teaches us that even the most capable need family and friends.",
     quote: "Don't worry, big brother. I'm here to help!",
-    color: "secondary"
+    color: "secondary",
+    image: "dorami.jpg"
   }
 ];
