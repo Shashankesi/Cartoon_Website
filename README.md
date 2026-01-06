@@ -1,63 +1,86 @@
-# Welcome to Doraemon Chronicle
+🤖 Doraemon Website
 
-## Project info
+A fun and interactive Doraemon Website built using :
+Vite
+TypeScript
+React
+shadcn-ui
+Tailwind CSS.
+This project is inspired by the popular Japanese cartoon Doraemon and showcases characters, gadgets, and episodes with a colorful and user-friendly design.
 
-**URL**: REPLACE_WITH_PROJECT_URL
+🌟 Features
 
-## How can I edit this code?
+🧸 Doraemon-themed interactive UI
 
-There are several ways of editing your application.
+👥 Character showcase (Doraemon, Nobita, Shizuka, Gian, Suneo)
 
-**Use the web editor or your IDE**
+🎒 Famous gadgets section
 
-If you have a web editor or CI connected to this repository you can edit files there. Otherwise use your preferred IDE locally and push changes to the repo.
+📺 Episode or gallery section
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🎨 Bright, responsive, and cartoon-style design
 
-Follow these steps:
+📱 Mobile-friendly layout
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🛠️ Technologies Used
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+HTML5 – Website structure
 
-# Step 3: Install the necessary dependencies.
-npm i
+CSS3 – Styling, animations, and layout
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+JavaScript – Interactivity and dynamic behavior
 
-**Edit a file directly in GitHub**
+📂 Project Structure
+doraemon-website/
+│
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── images/
+│   └── icons/
+└── README.md
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🚀 How to Run the Project
 
-**Use GitHub Codespaces**
+Clone the repository:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+git clone https://github.com/your-username/doraemon-website.git
 
-## What technologies are used for this project?
 
-This project is built with:
+Open the project folder:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+cd doraemon-website
 
-## How can I deploy this project?
 
-Deploy this project using your preferred hosting provider (Netlify, Vercel, GitHub Pages, or a static host). Build with `npm run build` and follow your host's instructions to publish the `dist` (or `build`) output.
+Open index.html in your browser
+(Live Server recommended for best experience)
 
-## Can I connect a custom domain?
+📸 Preview
 
-Yes. Follow your hosting provider's docs to configure a custom domain and DNS records.
+Add screenshots or GIFs of your Doraemon website here.
+
+🎯 Future Enhancements
+
+🎮 Mini Doraemon games
+
+🌙 Dark / Night mode
+
+🔊 Background music & sound effects
+
+📖 Episode guide or storyline section
+
+🤝 Contributing
+
+Feel free to fork the repository and improve the design or features.
+Pull requests are welcome!
+
+📜 Disclaimer
+
+This project is created for educational purposes only.
+All characters, images, and references belong to their respective copyright owners.
+
+👨‍💻 Author
+
+Shashank Kumar
+Web Developer | UI/UX Enthusiast
